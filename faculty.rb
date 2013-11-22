@@ -1,4 +1,4 @@
-class faculty < ActiveRecord::Base
+class Faculty < ActiveRecord::Base
   has_many :college_faculty_majors
   has_many :majors through: :college_faculty_majors
   has_many :college_faculties
