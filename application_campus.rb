@@ -105,7 +105,7 @@ end
 
 @handi  = Lecturer.find_or_create_by(name: 'Handi')
 @teja   = Lecturer.find_or_create_by(name: 'Teja')
-@rahmat = Lecturer.find_or_create_by(name: 'Teja')
+@rahmat = Lecturer.find_or_create_by(name: 'Rahmat')
 
 @semester_1 = Semester.find_or_create_by(name: 'Semester 1')
 @semester_2 = Semester.find_or_create_by(name: 'Semester 2')
