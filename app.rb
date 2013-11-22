@@ -47,6 +47,7 @@ ActiveRecord::Schema.define do
 
   create_table :students do |table|
     table.column :name, :string
+    table.column :college_faculty_major_id, :integer
   end unless ActiveRecord::Base.connection.table_exists?('students')
 
   create_table :college_faculties do |table|
