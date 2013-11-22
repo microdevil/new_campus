@@ -26,7 +26,7 @@ ActiveRecord::Schema.define do
   end unless ActiveRecord::Base.connection.table_exists?('colleges')
   
   create_table :faculties do |table|
-    table.column :name,:integer
+    table.column :name, :string
   end unless ActiveRecord::Base.connection.table_exists?('faculties')
 
   create_table :majors do |table|
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define do
   end unless ActiveRecord::Base.connection.table_exists?('semesters')
 
   create_table :courses do |table|
-    table.column :name, :integer
+    table.column :name, :string
   end unless ActiveRecord::Base.connection.table_exists?('courses')
 
   create_table :lecturers do |table|
@@ -80,5 +80,6 @@ ActiveRecord::Schema.define do
     table.column :student_id,                       :integer
     table.column :college_faculty_major_course_id,  :integer
     table.column :poin,                             :integer
+    table.column :grade,			    :string
   end unless ActiveRecord::Base.connection.table_exists?('student_courses')
 end
