@@ -1,4 +1,4 @@
-class College_faculty < ActiveRecord::Base
+class CollegeFaculty < ActiveRecord::Base
   belongs_to: :college
   belongs_to: :faculty
 end
