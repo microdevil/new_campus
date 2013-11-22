@@ -1,5 +1,8 @@
 class CollegeFaculty < ActiveRecord::Base
-  has_many   :college_faculty_majors 
   belongs_to :college
   belongs_to :faculty
+  has_many :majors, class_name: 'CollegeFacultyMajor'
+
+  delegate :name, to: :faculty
+
 end
