@@ -72,6 +72,7 @@ ActiveRecord::Schema.define do
   create_table :college_faculty_major_courses do |table|
     table.column :college_faculty_major_id,   :integer
     table.column :course_id,                  :integer
+    table.column :semester_id,                     :integer
     table.column :credit,                     :integer
   end unless ActiveRecord::Base.connection.table_exists?('college_faculty_major_courses')
 
