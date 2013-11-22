@@ -16,15 +16,15 @@ require_relative 'college_faculty_major_course'
 require_relative 'student_course'
 
 ActiveRecord::Base.establish_connection(
-  :adapter => "sqlite3",
-  :database => "campus.db"
-  )
+  adapter: "sqlite3",
+  database: "campus.db"
+)
 
 ActiveRecord::Schema.define do
   create_table :colleges do |table|
-    table.column :name,:string
+    table.column :name, :string
   end unless ActiveRecord::Base.connection.table_exists?('colleges')
-  
+
   create_table :faculties do |table|
     table.column :name, :string
   end unless ActiveRecord::Base.connection.table_exists?('faculties')
@@ -80,6 +80,47 @@ ActiveRecord::Schema.define do
     table.column :student_id,                       :integer
     table.column :college_faculty_major_course_id,  :integer
     table.column :poin,                             :integer
-    table.column :grade,			    :string
+    table.column :grade,          :string
   end unless ActiveRecord::Base.connection.table_exists?('student_courses')
 end
+
+@uin       = College.find_or_create_by(name: 'UIN')
+@gunadarma = College.find_or_create_by(name: 'Universitas Gunadarma')
+@itb       = College.find_or_create_by(name: 'ITB')
+
+@kedokteran    = Faculty.find_or_create_by(name: 'Kedokteran')
+@pendidikan    = Faculty.find_or_create_by(name: 'Pendidikan')
+@ilmu_komputer = Faculty.find_or_create_by(name: 'Ilmu Komputer')
+@teknik        = Faculty.find_or_create_by(name: 'Teknik')
+
+@kedokteran_umum       = Major.find_or_create_by(name: 'Kedokteran Umum')
+@kedokteran_gigi       = Major.find_or_create_by(name: 'Kedokteran Gigi')
+@pendidikan_olahraga   = Major.find_or_create_by(name: 'Pendidikan Olahraga')
+@pendidikan_ilmu_agama = Major.find_or_create_by(name: 'Pendidikan Ilmu Agama')
+@teknik_informatika    = Major.find_or_create_by(name: 'Teknik Informatika')
+@sistem_informasi      = Major.find_or_create_by(name: 'Sistem Informasi')
+@teknik_fisika         = Major.find_or_create_by(name: 'Teknik Fisika')
+@teknik_mesin          = Major.find_or_create_by(name: 'Teknik Mesin')
+@teknik_elektro        = Major.find_or_create_by(name: 'Teknik Elektro')
+
+@handi  = Lecturer.find_or_create_by(name: 'Handi')
+@teja   = Lecturer.find_or_create_by(name: 'Teja')
+@rahmat = Lecturer.find_or_create_by(name: 'Teja')
+
+@semester_1 = Semester.find_or_create_by(name: 'Semester 1')
+@semester_2 = Semester.find_or_create_by(name: 'Semester 2')
+@semester_3 = Semester.find_or_create_by(name: 'Semester 3')
+@semester_4 = Semester.find_or_create_by(name: 'Semester 4')
+@semester_5 = Semester.find_or_create_by(name: 'Semester 5')
+@semester_6 = Semester.find_or_create_by(name: 'Semester 6')
+@semester_7 = Semester.find_or_create_by(name: 'Semester 7')
+@semester_8 = Semester.find_or_create_by(name: 'Semester 8')
+
+@b_inggris     = Course.find_or_create_by(name: 'B. Inggris')
+@algoritma     = Course.find_or_create_by(name: 'Algoritma dan Pemrograman')
+@kalkulus      = Course.find_or_create_by(name: 'Kalkulus')
+@oop           = Course.find_or_create_by(name: 'Object Oriented Programming')
+@akuntansi     = Course.find_or_create_by(name: 'Akuntansi')
+@metnum        = Course.find_or_create_by(name: 'Metode Numerik')
+@rpl           = Course.find_or_create_by(name: 'RPL')
+@struktur_data = Course.find_or_create_by(name: 'Struktur Data')
