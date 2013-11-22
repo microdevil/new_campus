@@ -42,11 +42,11 @@ ActiveRecord::Schema.define do
   end unless ActiveRecord::Base.connection.table_exists?('courses')
 
   create_table :lecturers do |table|
-    table.column :lecturer_id, :integer
+    table.column :name, :string
   end unless ActiveRecord::Base.connection.table_exists?('lecturers')
 
   create_table :students do |table|
-    table.column :student_id, :integer
+    table.column :name, :string
   end unless ActiveRecord::Base.connection.table_exists?('students')
 
   create_table :college_faculties do |table|
